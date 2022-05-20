@@ -1,5 +1,5 @@
 
-NOTE: All code during this lecture was written out in 04-react-data-flow
+NOTE: All code during this lecture was written out in the 04-react-data-flow directory
 
 Controlled forms are important in React. Process is as follows:
 

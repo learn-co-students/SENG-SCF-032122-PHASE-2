@@ -19,3 +19,13 @@
 - Use Switch and Route to set up initial routes
 - Use NavLink and Router props to implement show page
 - Use history.push() to navigate to show page after POST request
+
+
+- home => '/' root route
+- project form => '/projects/new'
+- project edit form => '/projects/:id/edit'
+- projectdetail => new component responsible for rendering projects deets (like a profile page) => '/projects/:id'
+*:id indicates a dynamic value that will be replaced by the actual id*
+(how does React know what that value is? We will get there)
+- project list (this renders our project list items) => '/projects'
+
