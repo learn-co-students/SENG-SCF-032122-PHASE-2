@@ -1,5 +1,14 @@
 # React Advanced & Custom Hooks
 
+AGENDA:
+1-2pm advanced hooks and custom hooks
+2-2:10 - BREAK
+2:10-2:30 intro to Context and the API's standard syntax
+2:30-3:10 - look at Phase 2 Project reqs, talk about blog reqs
+3:10-3:20 - BREAK
+3:20-4pm - start a new React app, discuss how we plan out a new project
+
+
 ## Objectives
 
 - Implement `useRef` in a React component & discuss situations when it's useful
