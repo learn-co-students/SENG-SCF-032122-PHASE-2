@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 const ProjectEditForm = ({ onUpdateProject }) => {
   const [formState, setFormState] = useState({
@@ -12,8 +12,10 @@ const ProjectEditForm = ({ onUpdateProject }) => {
 
   const { name, about, phase, link, image } = formState;
 
+  
   const { id } = useParams()
-  // console.log(id)
+  const history = useHistory()
+  
 
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)
@@ -41,6 +43,7 @@ const ProjectEditForm = ({ onUpdateProject }) => {
       .then((resp) => resp.json())
       .then((updatedProj) => {
         onUpdateProject(updatedProj);
+        history.push(`/projects/${id}`)
       });
   };
 

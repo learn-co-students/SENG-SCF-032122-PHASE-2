@@ -7,7 +7,7 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
   return (
     <header>
       <nav>
-        <Link to="/" style={{ borderBottom: "none" }}>
+        <Link to="/" className="nav-link">
           <h1 className="branding">
             <span className="logo">{"//"}</span>
             Project Showcase
@@ -15,13 +15,17 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
         </Link>
 
         <div className="navigation">
+
           <NavLink exact className="button" to="/projects">
             All Projects
           </NavLink>
+
           <NavLink exact className="button" to="/projects/new">
             Add Project
           </NavLink>
+
           <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
+          
         </div>
       </nav>
     </header>

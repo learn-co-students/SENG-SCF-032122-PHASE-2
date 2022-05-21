@@ -48,9 +48,11 @@ const ProjectListItem = ({
       <footer className="extra">
         <span className="badge blue">Phase {phase}</span>
         <div className="manage">
-          <Link to={`/projects/${id}/edit`} style={{ borderBottom: "none" }}>
+          
+          <Link to={`/projects/${id}/edit`} className="pencil-link">
             <FaPencilAlt />
           </Link>
+
           <button onClick={handleDeleteClick}>
             <FaTrash />
           </button>

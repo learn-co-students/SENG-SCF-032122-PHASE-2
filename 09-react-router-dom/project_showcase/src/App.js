@@ -83,9 +83,7 @@ const App = () => {
         </Route>
 
         <Route path="/projects/:id/edit">
-          <ProjectEditForm
-            onUpdateProject={onUpdateProject}
-          />
+          <ProjectEditForm onUpdateProject={onUpdateProject}/>
         </Route>
 
         <Route path="/projects/new">
@@ -93,17 +91,17 @@ const App = () => {
         </Route>
 
         {/* {renderForm()} */}
-        <Route path="/projects">
-          <ProjectList
-            projects={projects}
-            // enterProjectEditModeFor={enterProjectEditModeFor}
-            onDeleteProject={onDeleteProject}
-          />
-        </Route>
 
         <Route path="/projects/:id">
           <ProjectDetail />
         </Route>
+
+        <Route path="/projects">
+          <ProjectList projects={projects}
+            // enterProjectEditModeFor={enterProjectEditModeFor}
+            onDeleteProject={onDeleteProject} />
+        </Route>
+
       </Switch>
 
     </div>
