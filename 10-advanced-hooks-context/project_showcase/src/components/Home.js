@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+
 const Home = () => {
   const [recentProjects, setRecentProjects] = useState([]);
+  useDocumentTitle("Project Showcase - Home")
 
   useEffect(() => {
     // fetch the 3 most recently added projects from json-server

@@ -1,11 +1,10 @@
 import ProjectListItem from "./ProjectListItem";
 import { useState } from "react";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
-const ProjectList = ({
-  projects,
-  onDeleteProject,
-}) => {
+const ProjectList = ({projects,onDeleteProject}) => {
   const [searchQuery, setSearchQuery] = useState("");
+  useDocumentTitle("Project Showcase - All Projects")
 
   const searchResults = projects.filter((project) => {
     return project.name.toLowerCase().includes(searchQuery.toLowerCase());

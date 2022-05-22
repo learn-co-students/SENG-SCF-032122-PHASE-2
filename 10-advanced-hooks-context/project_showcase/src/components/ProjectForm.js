@@ -1,18 +1,31 @@
-import { useState } from "react";
+import { useRef, useEffect } from "react";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { useForm } from "../hooks/useForm";
 
 const ProjectForm = ({ onAddProject }) => {
-  const [formData, setFormData] = useState({
+  // const [formData, setFormData] = useState();
+
+  const nameInputRef = useRef()
+  useDocumentTitle("Project Showcase - New Proj Form")
+
+  const initialData = {
     name: "",
     about: "",
     phase: "",
     link: "",
-    image: "",
-  });
+    image: ""
+  }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((formData) => ({ ...formData, [name]: value }));
-  };
+  const { formData, setFormData, handleChange } = useForm(initialData)
+
+  useEffect(()=> {
+    nameInputRef.current.focus()
+  }, [])
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((formData) => ({ ...formData, [name]: value }));
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +59,7 @@ const ProjectForm = ({ onAddProject }) => {
 
         <label htmlFor="name">Name</label>
         <input
+          ref={nameInputRef}
           type="text"
           id="name"
           name="name"
